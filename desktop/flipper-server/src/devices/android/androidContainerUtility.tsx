@@ -211,7 +211,7 @@ export function executeCommandAsApp(
     deviceId,
     app,
     command,
-    `run-as '${app}'`,
+    `su $(su -c 'stat -c "%u" /data/data/${app}')`,
   );
 }
 
